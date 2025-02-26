@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTech Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .section {
+            background: white;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+        .footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .dark-mode-btn {
+            background: #0073e6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>EduTech Hub - Learn & Grow</header>
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Welcome to EduTech Hub</h2>
+            <p>Your go-to platform for the latest in technology and education.</p>
+        </div>
+
+        <div class="section">
+            <h2>Courses & Blogs</h2>
+            <p>Explore our free courses and latest tech insights.</p>
+            <input type="text" id="search" onkeyup="searchCourses()" placeholder="Search Courses...">
+            <ul id="course-list">
+                <li>Web Development</li>
+                <li>Data Science</li>
+                <li>Artificial Intelligence</li>
+                <li>Cloud Computing</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Video Courses</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>Email: support@edutechhub.com</p>
+        </div>
+    </div>
+    
+    <div class="footer">&copy; 2024 EduTech Hub. All rights reserved.</div>
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+        function searchCourses() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let listItems = document.querySelectorAll("#course-list li");
+            listItems.forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>
